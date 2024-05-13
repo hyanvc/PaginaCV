@@ -281,11 +281,11 @@ function printUsr() {
 
 $(document).ready(function ($) {
  
- document.getElementById("nome-amigo").value = "";
-document.getElementById("email").value = "";
- document.getElementById("cpf-form-2").value = "";
- document.getElementById("Assunto").value = "";
- $("#cpf-form-2").mask("999.999.999-99")
+ document.getElementById("nome-amigo-2").value = "";
+document.getElementById("email-2").value = "";
+ document.getElementById("cpf-form-3").value = "";
+ document.getElementById("Assunto-2").value = "";
+ $("#cpf-form-3").mask("999.999.999-99")
 
  });
 
@@ -295,10 +295,10 @@ async function submitForm(e) {
  let hasErrors = false;
  $('.required-field').remove();
 
- const name = document.getElementById("nome-amigo");
- const email = document.getElementById("email");
- const cpf = document.getElementById("cpf-form-2");
- const subject = document.getElementById("Assunto");
+ const name = document.getElementById("nome-amigo-2");
+ const email = document.getElementById("email-2");
+ const cpf = document.getElementById("cpf-form-3");
+ const subject = document.getElementById("Assunto-2");
 
  const requiredFields = [name, email, subject];
 
