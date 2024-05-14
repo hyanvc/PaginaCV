@@ -73,7 +73,7 @@ $(document).ready(function () {
   };
   
   let tag = document.createElement('script');
-  let btnCloseModal = getElement('#btn-close');
+  // let btnCloseModal = getElement('#btn-close');
   let locationFile = window.location.pathname;
   
   tag.src = 'https://www.youtube.com/iframe_api';
@@ -206,10 +206,10 @@ $(document).ready(function () {
     return makeAuthorizedRequest(url, 'apiConsulta');
   };
   
-  btnCloseModal.addEventListener('click', () => {
-    getElement('#close-video').style.display = 'none';
-    player.stopVideo();
-  });
+  // btnCloseModal.addEventListener('click', () => {
+  //   getElement('#close-video').style.display = 'none';
+  //   player.stopVideo();
+  // });
   
   getElement('#close-btn-join-modal').addEventListener('click', () => {
     if (!cpfAdesao.value) {

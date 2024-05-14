@@ -116,7 +116,7 @@ function normalizePrice(price) {
 
 
 
-const api = authFetch;
+const apiSimulacao = authFetch;
 
 async function loadScript() {
     await setupToken({ url: urlConsulta });
@@ -126,7 +126,7 @@ async function loadScript() {
 loadScript()
 
 async function checkCPF(cpf) {
-    const response = await api(`${urlConsulta}/CPF/${cpf.replace(/\./g, "").replace("-", "")}`, { key: urlConsulta });
+    const response = await apiSimulacao(`${urlConsulta}/CPF/${cpf.replace(/\./g, "").replace("-", "")}`, { key: urlConsulta });
     if (response.valido) {
         await setupToken({ url: urlConsulta });
         return true;
@@ -142,7 +142,7 @@ function formatCPFSimulacao(cpf) {
 const cpfEligibilityPlanCV = async cpf => {
     const formattedCPF = formatCPFSimulacao(cpf);
     
-    const response = await api(`${urlConsulta}/Elegibilidade/${formattedCPF}/PlanoCV`, { key: urlConsulta });
+    const response = await apiSimulacao(`${urlConsulta}/Elegibilidade/${formattedCPF}/PlanoCV`, { key: urlConsulta });
     
     return response
 };
@@ -178,7 +178,7 @@ async function getSimulation(cpf) {
     const aposentadoriaPrevista = document.getElementById("planned-retirement")
     const saldoAcumuladoOutros = document.getElementById("accumulated-balance-others")
 
-    const response = await api(`${urlSimulacao}/Simulador/${cpf.replace(/\./g, "").replace("-", "")}/Simular`, { key: urlSimulacao });
+    const response = await apiSimulacao(`${urlSimulacao}/Simulador/${cpf.replace(/\./g, "").replace("-", "")}/Simular`, { key: urlSimulacao });
 
     if(response.rendaMensalCV){
         simulatorResults.style.display = "flex"
