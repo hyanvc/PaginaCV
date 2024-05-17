@@ -252,7 +252,7 @@ $(document).ready(function () {
     } else {
   
       const response = await cpfEligibilityCVPlan(cpfAdesao.value)
-  
+          debugger;
       if(response.podeAderir){
         if(submitWebflow){
           submitWebflow.click()

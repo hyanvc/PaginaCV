@@ -119,6 +119,7 @@ function normalizePrice(price) {
 const apiSimulacao = authFetch;
 
 async function loadScript() {
+    $('#adesao-cpf, #cpf-simulator').val('');
     await setupToken({ url: urlConsulta });
     await setupToken({ url: urlSimulacao });
 }
