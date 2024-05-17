@@ -118,18 +118,13 @@ function normalizePrice(price) {
 
 const apiSimulacao = authFetch;
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('cpf-simulator').value = '';
-    document.getElementById('adesao-cpf').value = '';
-    loadScript();
-});
-
 async function loadScript() {
     $('#adesao-cpf, #cpf-simulator').val('');
     await setupToken({ url: urlConsulta });
     await setupToken({ url: urlSimulacao });
 }
 
+loadScript()
 
 async function checkCPF(cpf) {
     const response = await apiSimulacao(`${urlConsulta}/CPF/${cpf.replace(/\./g, "").replace("-", "")}`, { key: urlConsulta });
